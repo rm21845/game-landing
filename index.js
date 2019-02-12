@@ -1,9 +1,7 @@
 var express = require('express');
 
 const port = 8568;
-//const hostname = '127.0.0.1';
 var server = express();
-//35.169.200.151
 
 server.set('view engine', 'ejs');
 server.use('/public', express.static('public'));
@@ -17,7 +15,7 @@ server.get('/docs', (req, res) => {
 });
 
 server.get('/*', (req, res) => {
-  res.render('fourohfour');
+  res.send('fourohfour');
 });
 
 server.listen(port);
